@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Data Sources | LunkerTally</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0B1621; --surface: #132232; --line: #22364A; --ink: #EEF3F7; --muted: #8FA2B5; --accent: #FFB547; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 8px 0 4px; }
+    h2 { font-size: 20px; margin: 32px 0 8px; }
+    p, li { color: var(--muted); }
+    .intro p { color: var(--ink); }
+    .updated { margin: 0 0 24px; font-size: 15px; }
+    .links { list-style: none; padding: 0; }
+    .draft { border: 1px solid var(--accent); background: rgba(255, 181, 71, 0.12); color: var(--accent); font-weight: 700; border-radius: 14px; padding: 12px 16px; margin: 0 0 16px; }
+    ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    nav, footer { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Data Sources</h1>
+  <p class="updated">LunkerTally. Version 1.1. Last updated November 19, 2026.</p>
+  <div class="intro">
+    <p>Where the app's information comes from, and the credit each source asks for.</p>
+  </div>
+  <h2>Weather</h2>
+  <ul>
+    <li>Weather data from MET Norway (the Norwegian Meteorological Institute), under CC BY 4.0. We turn their forecast into our own short summaries.</li>
+    <li>Gusts, chance of rain and weather alerts: Data Source: Environment and Climate Change Canada, under the ECCC Data Servers End-use Licence. Alerts are shown as issued.</li>
+    <li>Great Lakes water temperature from NOAA's Great Lakes Environmental Research Laboratory (GLERL).</li>
+    <li>Sun, moon and solunar times are worked out on your phone, with formulas from SunCalc (BSD licence, Vladimir Agafonkin).</li>
+  </ul>
+  <ul class="links">
+    <li><a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0 licence</a></li>
+    <li><a href="https://eccc-msc.github.io/open-data/licence/readme_en/">ECCC Data Servers End-use Licence</a></li>
+  </ul>
+  <h2>Fishing rules (What's Open)</h2>
+  <p>Rules from the Ontario Fishery Regulations, 2007 and Ontario's variation orders. © King's Printer for Ontario. Not the official version.</p>
+  <p>The 2026 Ontario Fishing Regulations Summary is only used to check our work.</p>
+  <ul class="links">
+    <li><a href="https://www.ontario.ca/document/ontario-fishing-regulations-summary">Ontario Fishing Regulations Summary</a></li>
+    <li><a href="https://www.ontario.ca/page/ontario-fishery-regulations-variation-orders">Ontario's variation orders</a></li>
+  </ul>
+  <h2>Maps and places</h2>
+  <ul>
+    <li>Zone map: Contains information licensed under the Open Government Licence - Ontario.</li>
+    <li>Lake and town names from Land Information Ontario (Geographic Names Ontario, Ontario Hydro Network), Open Government Licence - Ontario.</li>
+    <li>Drop a Pin maps come from Apple on iPhone and Google on Android.</li>
+  </ul>
+  <ul class="links">
+    <li><a href="https://www.ontario.ca/page/open-government-licence-ontario">Open Government Licence - Ontario</a></li>
+  </ul>
+  <h2>Fish</h2>
+  <p>Fish names, French names and where each fish is found come from government open data, including Quebec's list of vertebrate wildlife (Liste de la faune vertébrée du Québec) and Wild Species 2020 from the Government of Canada.</p>
+  <h2>What's Biting</h2>
+  <p>What's Biting comes from catches anglers log in the app, plus our own general guide when there aren't enough.</p>
+  <footer><a href="privacy.html">Privacy Policy</a><a href="terms.html">Terms of Use</a><a href="community.html">Community Rules</a><a href="sources.html">Data Sources</a><a href="safety.html">Safety Tips</a></footer>
+</main>
+</body>
+</html>

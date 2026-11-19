@@ -1,0 +1,68 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex">
+  <title>Sources des données | LunkerTally</title>
+  <style>
+    :root { color-scheme: dark; --bg: #0B1621; --surface: #132232; --line: #22364A; --ink: #EEF3F7; --muted: #8FA2B5; --accent: #FFB547; }
+    * { box-sizing: border-box; }
+    body { margin: 0; background: var(--bg); color: var(--ink); font: 17px/1.6 system-ui, -apple-system, "Segoe UI", Roboto, sans-serif; }
+    main { max-width: 720px; margin: 0 auto; padding: 32px 16px 64px; }
+    h1 { font-size: 30px; line-height: 1.2; margin: 8px 0 4px; }
+    h2 { font-size: 20px; margin: 32px 0 8px; }
+    p, li { color: var(--muted); }
+    .intro p { color: var(--ink); }
+    .updated { margin: 0 0 24px; font-size: 15px; }
+    .links { list-style: none; padding: 0; }
+    .draft { border: 1px solid var(--accent); background: rgba(255, 181, 71, 0.12); color: var(--accent); font-weight: 700; border-radius: 14px; padding: 12px 16px; margin: 0 0 16px; }
+    ul { padding-left: 22px; }
+    li { margin: 6px 0; }
+    a { color: var(--accent); }
+    nav, footer { display: flex; gap: 16px; flex-wrap: wrap; font-size: 15px; }
+    footer { border-top: 1px solid var(--line); margin-top: 40px; padding-top: 16px; }
+  </style>
+</head>
+<body>
+<main>
+  <h1>Sources des données</h1>
+  <p class="updated">LunkerTally. Version 1.1. Mis à jour le 19 novembre 2026.</p>
+  <div class="intro">
+    <p>D'où vient l'information de l'appli, et la mention que chaque source demande.</p>
+  </div>
+  <h2>Météo</h2>
+  <ul>
+    <li>Données météo de MET Norway (l'Institut météorologique norvégien), selon la licence CC BY 4.0. Nous transformons leurs prévisions en courts résumés bien à nous.</li>
+    <li>Rafales, probabilité de pluie et alertes météo : Source des données : Environnement et Changement climatique Canada, selon la Licence d'utilisation finale pour les services de données d'ECCC. Les alertes sont affichées telles que diffusées.</li>
+    <li>Température de l'eau des Grands Lacs du Great Lakes Environmental Research Laboratory (GLERL) de la NOAA.</li>
+    <li>Les heures du soleil et de la lune et les périodes solunaires sont calculées sur votre téléphone, avec les formules de SunCalc (licence BSD, Vladimir Agafonkin).</li>
+  </ul>
+  <ul class="links">
+    <li><a href="https://creativecommons.org/licenses/by/4.0/">Licence CC BY 4.0</a></li>
+    <li><a href="https://eccc-msc.github.io/open-data/licence/readme_fr/">Licence d'utilisation finale d'ECCC</a></li>
+  </ul>
+  <h2>Règles de pêche (C'est ouvert?)</h2>
+  <p>Règles tirées du Règlement de pêche de l'Ontario de 2007 et des ordonnances de modification de l'Ontario. © Imprimeur du Roi pour l'Ontario. Ce n'est pas la version officielle.</p>
+  <p>Le Résumé des règlements de la pêche de l'Ontario 2026 sert seulement à vérifier notre travail.</p>
+  <ul class="links">
+    <li><a href="https://www.ontario.ca/document/ontario-fishing-regulations-summary">Résumé des règlements de la pêche de l'Ontario</a></li>
+    <li><a href="https://www.ontario.ca/page/ontario-fishery-regulations-variation-orders">Ordonnances de modification de l'Ontario</a></li>
+  </ul>
+  <h2>Cartes et lieux</h2>
+  <ul>
+    <li>Carte des zones : Contient des renseignements utilisés en vertu de la Licence du gouvernement ouvert - Ontario.</li>
+    <li>Noms de lacs et de villes de Land Information Ontario (Geographic Names Ontario, Ontario Hydro Network), Licence du gouvernement ouvert - Ontario.</li>
+    <li>Les cartes de Placer une épingle viennent d'Apple sur iPhone et de Google sur Android.</li>
+  </ul>
+  <ul class="links">
+    <li><a href="https://www.ontario.ca/fr/page/licence-du-gouvernement-ouvert-ontario">Licence du gouvernement ouvert - Ontario</a></li>
+  </ul>
+  <h2>Poissons</h2>
+  <p>Les noms des poissons, leurs noms français et où chacun se trouve viennent de données ouvertes des gouvernements, dont la Liste de la faune vertébrée du Québec et Espèces sauvages 2020 du gouvernement du Canada.</p>
+  <h2>Ça mord?</h2>
+  <p>Ça mord? vient des prises que les pêcheurs notent dans l'appli, plus notre propre guide général quand il n'y en a pas assez.</p>
+  <footer><a href="privacy.html">Politique de confidentialité</a><a href="terms.html">Conditions d'utilisation</a><a href="community.html">Règles de la communauté</a><a href="sources.html">Sources des données</a><a href="safety.html">Conseils de sécurité</a><a href="../sources.html" lang="en">English</a></footer>
+</main>
+</body>
+</html>
