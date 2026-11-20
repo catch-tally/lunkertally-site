@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>LunkerTally, bientôt disponible</title>
+  <title>LunkerTally : compteur de prises, journal et tournois</title>
   <meta name="description" content="Une appli de pêche faite au Canada : compte tes prises, tiens ton journal de pêche, organise des tournois entre amis et consulte les règles de pêche de l'Ontario.">
   <link rel="icon" type="image/png" href="../favicon.png">
   <style>
@@ -14,7 +14,7 @@
     .band { position: relative; overflow: hidden; background: var(--band); border-radius: 0 0 32px 32px; padding: 56px 16px 72px; text-align: center; }
     .band img { display: block; margin: 0 auto 12px; }
     .band h1 { font-family: "Archivo Expanded", system-ui, sans-serif; font-weight: 800; font-size: clamp(32px, 9vw, 48px); line-height: 1.1; margin: 0; letter-spacing: 0.5px; }
-    .band .soon { margin: 10px 0 0; color: #FFD08A; font-weight: 700; text-transform: uppercase; letter-spacing: 2px; font-size: 14px; }
+    .band .soon { margin: 10px 0 0; color: #FFD08A; font-weight: 700; letter-spacing: 0.5px; font-size: 17px; }
     .waves { position: absolute; left: 0; bottom: 0; width: 200%; height: 40px; animation: drift 24s linear infinite; }
     .waves.back { opacity: 0.45; animation-duration: 36s; bottom: 6px; }
     @keyframes drift { from { transform: translateX(0); } to { transform: translateX(-50%); } }
@@ -27,6 +27,20 @@
     p, li { color: var(--muted); }
     .card { background: var(--surface); border-radius: 20px; padding: 4px 20px 12px; margin: 0 0 24px; }
     a { color: var(--accent); }
+    .badge { display: inline-block; min-height: 44px; margin: 0 0 8px; }
+    .badge img { display: block; height: 54px; width: auto; }
+    .free { margin: 0 0 28px; color: var(--muted); text-align: center; }
+    .features { list-style: none; padding: 0; margin: 0 0 8px; display: grid; gap: 12px; }
+    .features li { background: var(--surface); border-radius: 20px; padding: 16px 20px; }
+    .features strong { display: block; color: var(--ink); font-size: 18px; margin: 0 0 2px; }
+    .private { text-align: center; color: var(--ink); margin: 20px 0 8px; }
+    .screens { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin: 0 0 8px; padding: 0; list-style: none; }
+    .screens figure { margin: 0; }
+    .screens img { display: block; width: 100%; height: auto; border-radius: 22px; border: 1px solid var(--line); }
+    .screens figcaption { font-size: 14px; color: var(--muted); margin: 8px 2px 0; line-height: 1.4; }
+    @media (min-width: 720px) { main.wide { max-width: 960px; } .screens { grid-template-columns: repeat(3, minmax(0, 1fr)); } .features { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+    .links { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px 20px; margin: 28px 0 0; }
+    .links a { display: inline-block; padding: 10px 4px; font-weight: 700; }
     footer { max-width: 640px; margin: 0 auto; padding: 16px 16px 40px; border-top: 1px solid var(--line); display: flex; gap: 8px 16px; flex-wrap: wrap; font-size: 15px; }
     footer a { display: inline-block; padding: 6px 0; }
   </style>
@@ -35,13 +49,33 @@
 <header class="band">
   <img src="../bobber.png" alt="" width="64" height="64">
   <h1>LunkerTally</h1>
-  <p class="soon">Bientôt disponible</p>
+  <p class="soon">Note tes prises. Bats tes amis.</p>
   <svg class="waves back" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--wave)" d="M0 22 Q12.5 12 25 22 T50 22 T75 22 T100 22 T125 22 T150 22 T175 22 T200 22 V40 H0 Z"/></svg>
   <svg class="waves front" viewBox="0 0 200 40" preserveAspectRatio="none" aria-hidden="true"><path fill="var(--wave)" d="M0 22 Q12.5 12 25 22 T50 22 T75 22 T100 22 T125 22 T150 22 T175 22 T200 22 V40 H0 Z"/></svg>
 </header>
-<main>
+<main class="wide">
   <p class="lead">Une appli de pêche faite au Canada : compte tes prises, tiens ton journal de pêche, organise des tournois entre amis et consulte les règles de pêche de l'Ontario.</p>
-  <p class="center"><a class="button" href="mailto:hello@lunkertally.com">Nous joindre</a></p>
+
+  <h2>Ce que ça fait</h2>
+  <ul class="features">
+    <li><strong>Le compteur, d'une touche</strong>Touche un poisson et c'est noté. Tes totaux pour aujourd'hui, ta sortie et l'année.</li>
+    <li><strong>Un journal de pêche</strong>Tes sorties, tes prises avec photos et notes, et un calendrier de chaque poisson.</li>
+    <li><strong>Des tournois entre amis</strong>Invite tes amis avec un code, choisis une date de fin et un prix, et suis le classement et le clavardage en direct.</li>
+    <li><strong>C'est ouvert?</strong>Les règles de pêche de l'Ontario pour ta zone aujourd'hui : ouvert ou fermé, limites et tailles, et les lacs et rivières qui ont leurs propres règles.</li>
+    <li><strong>Météo et Ça mord?</strong>Vent, pluie, pression et bons moments pour essayer, plus ce qui se prend près de toi, par secteur, jamais par coin.</li>
+    <li><strong>XP, séries et badges</strong>Monte de niveau en pêchant, garde ta série quotidienne et gagne des badges.</li>
+  </ul>
+  <p class="private">Tes coins exacts restent privés. Pas de pub, et on ne vend jamais tes données.</p>
+  <h2>Un coup d'œil</h2>
+  <ul class="screens">
+    <li><figure><img src="../screens/tally.jpg" alt="Compteur : les poissons d'aujourd'hui, par espèce" width="600" height="1304" loading="lazy"><figcaption>Compteur : les poissons d'aujourd'hui, par espèce</figcaption></figure></li>
+    <li><figure><img src="../screens/catch.jpg" alt="Une prise avec sa photo" width="600" height="1304" loading="lazy"><figcaption>Une prise avec sa photo</figcaption></figure></li>
+    <li><figure><img src="../screens/journal.jpg" alt="Journal : tes sorties" width="600" height="1304" loading="lazy"><figcaption>Journal : tes sorties</figcaption></figure></li>
+    <li><figure><img src="../screens/forecast.jpg" alt="Météo pour Lake Erie à Port Dover" width="600" height="1304" loading="lazy"><figcaption>Météo pour Lake Erie à Port Dover</figcaption></figure></li>
+    <li><figure><img src="../screens/whats-open.jpg" alt="C'est ouvert? pour la zone 19" width="600" height="1304" loading="lazy"><figcaption>C'est ouvert? pour la zone 19</figcaption></figure></li>
+    <li><figure><img src="../screens/compete.jpg" alt="Le classement d'un tournoi" width="600" height="1304" loading="lazy"><figcaption>Le classement d'un tournoi</figcaption></figure></li>
+  </ul>
+  <p class="links"><a href="../fr/support.html">Aide</a><a href="../legal/fr/privacy.html">Politique de confidentialité</a><a href="../legal/fr/terms.html">Conditions d'utilisation</a><a href="mailto:hello@lunkertally.com">Nous joindre</a></p>
 </main>
   <p class="center"><a href="../" lang="en">English</a></p>
 <footer><a href="../legal/fr/privacy.html">Politique de confidentialité</a><a href="../legal/fr/terms.html">Conditions d'utilisation</a><a href="../legal/fr/community.html">Règles de la communauté</a><a href="../legal/fr/sources.html">Sources des données</a><a href="../legal/fr/safety.html">Conseils de sécurité</a><a href="../fr/support.html">Nous joindre</a></footer>
