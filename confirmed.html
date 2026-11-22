@@ -7,6 +7,7 @@
   <meta name="description" content="A fishing app made in Canada: tally your catches, keep a fishing journal, run comps with friends and check Ontario's fishing rules.">
   <link rel="icon" type="image/png" href="/favicon.png">
   <style>
+    [hidden] { display: none !important; }
     @font-face { font-family: "Archivo Expanded"; font-weight: 800; src: url("/fonts/ArchivoExpanded-ExtraBold.ttf") format("truetype"); font-display: swap; }
     :root { color-scheme: dark; --bg: #0B1621; --band: #103A55; --wave: #0E1D2B; --surface: #132232; --line: #22364A; --ink: #EEF3F7; --muted: #8FA2B5; --accent: #FFB547; --onAccent: #1F1404; }
     * { box-sizing: border-box; }
@@ -55,7 +56,8 @@
 </header>
 <main>
   <section lang="en">
-    <div class="ok">
+    <p class="going lead" hidden>Confirming your email...</p>
+    <div class="ok" hidden>
       <h2>Email confirmed</h2>
       <p>Your email is confirmed. Go back to LunkerTally and sign in.</p>
     </div>
@@ -63,10 +65,12 @@
       <h2>That link didn't work</h2>
       <p>It's too old or it was already used. Open LunkerTally and sign in. If it asks, tap Send Link Again.</p>
     </div>
+    <noscript><p>Turn on JavaScript in this browser to confirm your email, then tap the link in the email again.</p></noscript>
     <p class="center"><a class="button" href="lunkertally://">Open LunkerTally</a></p>
   </section>
   <section lang="fr">
-    <div class="ok">
+    <p class="going lead" hidden>Confirmation de ton courriel...</p>
+    <div class="ok" hidden>
       <h2>Courriel confirmé</h2>
       <p>Ton courriel est confirmé. Retourne dans LunkerTally et connecte-toi.</p>
     </div>
@@ -74,16 +78,23 @@
       <h2>Ce lien n'a pas marché</h2>
       <p>Il est trop vieux ou il a déjà servi. Ouvre LunkerTally et connecte-toi. Si on te le demande, touche Renvoyer le lien.</p>
     </div>
+    <noscript><p>Active JavaScript dans ce navigateur pour confirmer ton courriel, puis touche encore le lien dans le courriel.</p></noscript>
     <p class="center"><a class="button" href="lunkertally://">Ouvrir LunkerTally</a></p>
   </section>
 </main>
 <script>
   (function () {
-    var said = location.hash + location.search;
-    if (/error/.test(said)) {
-      document.querySelectorAll('.ok').forEach(function (e) { e.hidden = true; });
-      document.querySelectorAll('.bad').forEach(function (e) { e.hidden = false; });
+    function show(cls) {
+      document.querySelectorAll('.' + cls).forEach(function (e) { e.hidden = false; });
     }
+    var token = new URLSearchParams(location.search).get('confirm');
+    if (token !== null && /^[0-9a-f]{20,200}$/i.test(token)) {
+      show('going');
+      location.replace('https://engsjikbeqdkkpqwmcpn.supabase.co/auth/v1/verify?type=signup&token=' + encodeURIComponent(token) + '&redirect_to=' + encodeURIComponent('https://lunkertally.com/confirmed.html'));
+      return;
+    }
+    var said = location.hash + location.search;
+    show(token !== null || /error/.test(said) ? 'bad' : 'ok');
     if (said) history.replaceState(null, '', location.pathname);
   })();
 </script>
